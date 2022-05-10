@@ -1,4 +1,4 @@
 FROM nginx
 COPY www/* /usr/share/nginx/html/
 COPY default.conf /etc/nginx/conf.d/
-EXPOSE 10080
+EXPOSE 80
