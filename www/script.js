@@ -1,14 +1,13 @@
 (function() {
   document.addEventListener("DOMContentLoaded", (event) => {
     const urlParams = new URLSearchParams(window.location.search);
+    const audio = document.getElementById("audio");
 
-    if (urlParams.has('silence')) {
-      document.getElementById('audio').removeAttribute('autoplay');
+    if (!urlParams.has('silence')) {
+      audio.play();
     }
 
     document.body.addEventListener("click", (event) => {
-      let audio = document.getElementById("audio");
-
       if (audio.paused) {
         audio.play();
       } else {
